@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from './site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  return siteUrl ? [{ url: siteUrl.replace(/\/$/, ''), lastModified: new Date(), changeFrequency: 'monthly', priority: 1 }] : [];
+  return [{ url: SITE_URL, lastModified: new Date(), changeFrequency: 'monthly', priority: 1 }];
 }

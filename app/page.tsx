@@ -1,4 +1,5 @@
 import ContactActions from './contact-actions';
+import { SITE_URL } from './site';
 
 const valueCards = [
   { number: '01', title: '内容与案例', copy: '围绕 AI 趋势、工具实践、行业经验与真实案例，获得可用的认知与方法。' },
@@ -17,9 +18,9 @@ const faqItems = [
 const organizationSchema = {
   '@context': 'https://schema.org', '@type': 'Organization', name: '518AILab', alternateName: '518 AI Lab',
   description: '以杭州 AI 生态为起点的创新连接网络，连接 AI 人才、企业需求与创新项目。',
-  logo: '/images/518ailab-logo.png', areaServed: '杭州', knowsAbout: ['人工智能', 'AI 实践', '企业 AI 落地', '创新协作'],
+  url: SITE_URL, logo: `${SITE_URL}/images/518ailab-logo.png`, areaServed: '杭州', knowsAbout: ['人工智能', 'AI 实践', '企业 AI 落地', '创新协作'],
 };
-const websiteSchema = { '@context': 'https://schema.org', '@type': 'WebSite', name: '518AILab', inLanguage: 'zh-CN', description: '连接 AI 人才、企业需求与创新项目的创新连接网络。' };
+const websiteSchema = { '@context': 'https://schema.org', '@type': 'WebSite', name: '518AILab', url: SITE_URL, inLanguage: 'zh-CN', description: '连接 AI 人才、企业需求与创新项目的创新连接网络。' };
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
 
 export default function Home() {
