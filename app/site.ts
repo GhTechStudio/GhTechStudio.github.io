@@ -1,1 +1,2 @@
-export const SITE_URL = 'https://ailab-518-intro.baicai996.chatgpt.site';
+export const SITE_URL = 'https://ghtechstudio.github.io/GhTechStudio/';
+export const ASSET_BASE_PATH = '/GhTechStudio';

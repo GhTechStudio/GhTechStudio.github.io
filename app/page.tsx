@@ -1,5 +1,7 @@
 import ContactActions from './contact-actions';
-import { SITE_URL } from './site';
+import { ASSET_BASE_PATH, SITE_URL } from './site';
+
+export const dynamic = 'force-static';
 
 const valueCards = [
   { number: '01', title: '内容与案例', copy: '围绕 AI 趋势、工具实践、行业经验与真实案例，获得可用的认知与方法。' },
@@ -18,12 +20,15 @@ const faqItems = [
 const organizationSchema = {
   '@context': 'https://schema.org', '@type': 'Organization', name: '518AILab', alternateName: '518 AI Lab',
   description: '以杭州 AI 生态为起点的创新连接网络，连接 AI 人才、企业需求与创新项目。',
-  url: SITE_URL, logo: `${SITE_URL}/images/518ailab-logo.png`, areaServed: '杭州', knowsAbout: ['人工智能', 'AI 实践', '企业 AI 落地', '创新协作'],
+  url: SITE_URL, logo: `${SITE_URL}images/518ailab-logo.png`, areaServed: '杭州', knowsAbout: ['人工智能', 'AI 实践', '企业 AI 落地', '创新协作'],
 };
 const websiteSchema = { '@context': 'https://schema.org', '@type': 'WebSite', name: '518AILab', url: SITE_URL, inLanguage: 'zh-CN', description: '连接 AI 人才、企业需求与创新项目的创新连接网络。' };
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
 
 export default function Home() {
+  const logoPath = `${ASSET_BASE_PATH}/images/518ailab-logo.png`;
+  const qrCodePath = `${ASSET_BASE_PATH}/images/wechat-qr.png`;
+
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
@@ -31,7 +36,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="返回 518AILab 首页"><img src="/images/518ailab-logo.png" alt="518AILab" width="255" height="50" /></a>
+        <a className="brand" href="#top" aria-label="返回 518AILab 首页"><img src={logoPath} alt="518AILab" width="255" height="50" /></a>
         <nav aria-label="页面导航"><a href="#value">我们创造的价值</a><a href="#people">服务对象</a><a href="#contact">联系我们</a></nav>
         <a className="header-cta" href="#contact">添加微信</a>
       </header>
@@ -69,9 +74,9 @@ export default function Home() {
 
       <section className="faq page-shell" aria-labelledby="faq-title"><div className="faq-header"><p className="section-kicker">QUICK ANSWERS</p><h2 id="faq-title">关于 518AILab</h2></div><div className="faq-grid">{faqItems.map((item) => <article key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></article>)}</div></section>
 
-      <section className="contact" id="contact" aria-labelledby="contact-title"><div className="page-shell contact-grid"><div className="contact-copy"><p className="section-kicker">START A CONVERSATION</p><h2 id="contact-title">从一次真诚交流开始。</h2><p>如果你正在实践 AI、寻找合适的协作网络，或有企业 AI 落地相关的问题，欢迎添加微信，聊聊你正在面对的真实问题。</p><ContactActions wechatId="vxbusi1688" /></div><figure className="qr-card"><img src="/images/wechat-qr.png" alt="添加 518AILab 主理人微信的二维码" width="386" height="386" /><figcaption>扫码添加主理人微信</figcaption></figure></div></section>
+      <section className="contact" id="contact" aria-labelledby="contact-title"><div className="page-shell contact-grid"><div className="contact-copy"><p className="section-kicker">START A CONVERSATION</p><h2 id="contact-title">从一次真诚交流开始。</h2><p>如果你正在实践 AI、寻找合适的协作网络，或有企业 AI 落地相关的问题，欢迎添加微信，聊聊你正在面对的真实问题。</p><ContactActions wechatId="vxbusi1688" /></div><figure className="qr-card"><img src={qrCodePath} alt="添加 518AILab 主理人微信的二维码" width="386" height="386" /><figcaption>扫码添加主理人微信</figcaption></figure></div></section>
 
-      <footer className="site-footer page-shell"><img src="/images/518ailab-logo.png" alt="518AILab" width="204" height="40" /><p>以杭州 AI 生态为起点，连接 AI 人才、企业需求与创新项目。</p></footer>
+      <footer className="site-footer page-shell"><img src={logoPath} alt="518AILab" width="204" height="40" /><p>以杭州 AI 生态为起点，连接 AI 人才、企业需求与创新项目。</p></footer>
     </main>
   );
 }
