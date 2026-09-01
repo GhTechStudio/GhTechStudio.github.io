@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ghtechstudio.github.io/GhTechStudio/sitemap.xml
+Sitemap: https://ghtechstudio.github.io/sitemap.xml
