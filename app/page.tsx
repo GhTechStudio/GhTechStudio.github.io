@@ -78,14 +78,13 @@ export default function Home() {
       <section className="hero page-shell" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">518 AI LAB · HANGZHOU</p>
-          <h1 id="hero-title">让 AI 从<br /><em>会用</em>走到 <em>能做</em>。</h1>
-          <p className="hero-lead">518AILab 是一个面向真实工作与创作的学习、交流和实践网络。我们把课程、活动与可信同行连接在一起，让想法不止停在工具体验。</p>
+          <h1 id="hero-title"><span className="hero-intro-title">518 AI Lab 介绍</span>打造可信<br /><em>AI 同行圈</em>。</h1>
+          <p className="hero-lead">518AILab 是一个面向真实工作与创作的学习、交流和实践网络。我们把课程、活动与可信同行连接在一起，让学习不止停在工具体验。</p>
           <div className="hero-actions"><a className="button" href="#courses">探索课程地图 <span aria-hidden="true">↓</span></a><a className="quiet-link" href={sourceLinks.handbook} target="_blank" rel="noreferrer">阅读使用说明书 <span aria-hidden="true">↗</span></a></div>
         </div>
-        <div className="hero-art" aria-label="518AILab AIGC 课程展示">
-          <div className="hero-stamp">IDEAS<br />INTO<br />PRACTICE</div>
-          <img src={image('aigc-course.jpg')} alt="518AILab AIGC 专项课程封面" width="720" height="540" fetchPriority="high" />
-          <p>体系化学习 · 真实问题 · 同行连接</p>
+        <div className="hero-art" aria-label="518AILab 可信 AI 同行圈主视觉">
+          <img src={image('hero-518-network.jpg')} alt="以纸感拼贴表现学习、实践与可信同行连接的 518AILab 主视觉" width="900" height="675" fetchPriority="high" />
+          <p>学习 · 实践 · 连接</p>
         </div>
       </section>
 
