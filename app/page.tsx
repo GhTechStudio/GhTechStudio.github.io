@@ -17,6 +17,13 @@ const specialtyCourses = [
   { title: 'Claude Code 直播课', image: 'course-claude-live.jpg' },
   { title: 'AIGC 直播', image: 'course-aigc-live.jpg' },
 ];
+const growthSteps = [
+  { number: '01', title: '加入 518', icon: 'join' },
+  { number: '02', title: '选择主题', icon: 'choose' },
+  { number: '03', title: '体系化学习', icon: 'learn' },
+  { number: '04', title: '问题实践', icon: 'practice' },
+  { number: '05', title: '同行连接', icon: 'connect' },
+] as const;
 const activityList = [
   { title: 'OpenClaw 线下课', image: 'activity-openclaw-class.jpg' },
   { title: 'OPC 一人公司商业课', image: 'activity-opc-business.jpg' },
@@ -58,6 +65,15 @@ const organizationSchema = {
 const websiteSchema = { '@context': 'https://schema.org', '@type': 'WebSite', name: '518AILab', url: SITE_URL, inLanguage: 'zh-CN', description: '518AILab 体系化 AI 课程、活动与可信同行网络。' };
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
 
+function GrowthIcon({ icon }: { icon: (typeof growthSteps)[number]['icon'] }) {
+  const shared = { fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+  if (icon === 'join') return <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="16" r="6" {...shared} /><path d="M10 38c2-7 6-11 11-11s9 4 11 11" {...shared} /><path d="M37 24v12M31 30h12" {...shared} /></svg>;
+  if (icon === 'choose') return <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 8h20l6 6v26H12z" {...shared} /><path d="M18 18h14M18 25h8" {...shared} /><path d="m28 33 3 3 7-8" {...shared} /></svg>;
+  if (icon === 'learn') return <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 14c-5-4-11-3-15 0v21c4-3 10-3 15 1 5-4 11-4 15-1V14c-4-3-10-4-15 0Z" {...shared} /><path d="M24 14v22" {...shared} /></svg>;
+  if (icon === 'practice') return <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="11" width="28" height="20" rx="2" {...shared} /><path d="m18 21-4 3 4 3M30 21l4 3-4 3M24 19l-2 10M7 37h34" {...shared} /></svg>;
+  return <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="17" r="5" {...shared} /><circle cx="32" cy="20" r="5" {...shared} /><path d="M7 38c2-7 6-10 10-10s8 3 10 10M25 38c1-5 4-8 8-8s7 3 8 8" {...shared} /></svg>;
+}
+
 export default function Home() {
   const image = (name: string) => `${ASSET_BASE_PATH}/images/${name}`;
   const logoPath = image('518ailab-logo.png');
@@ -84,7 +100,7 @@ export default function Home() {
         </div>
         <div className="hero-art hero-growth-map" aria-label="518AILab 成员成长路线">
           <div className="growth-map-heading"><p>MEMBER PATH</p><h2>成员成长路线</h2></div>
-          <ol className="growth-steps"><li><span>01</span><strong>加入 518</strong></li><li><span>02</span><strong>选择当期主题</strong></li><li><span>03</span><strong>体系化学习</strong></li><li><span>04</span><strong>真实问题实践</strong></li><li className="growth-connection"><span>05</span><strong>可信同行连接</strong></li></ol>
+          <div className="growth-flow" role="list">{growthSteps.map((step, index) => <div className="growth-step-unit" role="listitem" key={step.number}><article className="growth-node"><span>{step.number}</span><GrowthIcon icon={step.icon} /><strong>{step.title}</strong></article>{index < growthSteps.length - 1 && <i className="growth-arrow" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M2 9h12M10 4l5 5-5 5" /></svg></i>}</div>)}</div>
           <div className="growth-summary"><strong>学习 · 实践 · 连接</strong><p>在每一次参与中积累经验，回看、复盘，再选择下一步。</p></div>
           <p className="growth-note">具体参与与协作，以实际进展及双方确认的安排为准。</p>
         </div>
