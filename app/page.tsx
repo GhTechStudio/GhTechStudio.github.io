@@ -9,7 +9,7 @@ const sourceLinks = {
   aigc: 'https://icnepuql73ya.feishu.cn/wiki/C4JTwhxZviveF3kDVa6cdOjLn9e?from=from_copylink',
 };
 
-const courseLibrary = [
+const specialtyCourses = [
   { title: 'Claude Code 源码解析课', image: 'course-claude-source.jpg' },
   { title: 'Claude Code 精品课', image: 'course-claude-premium.jpg' },
   { title: 'Codex 企业场景应用', image: 'course-codex.jpg' },
@@ -97,12 +97,12 @@ export default function Home() {
       <section className="handbook-intro page-shell" aria-labelledby="handbook-title"><div><p className="section-label">START HERE</p><h2 id="handbook-title">先读使用说明书，<br />再找到自己的入口。</h2></div><div className="handbook-card"><div className="handbook-number" aria-hidden="true"><span>01</span><small>FIRST<br />READ</small></div><div className="handbook-card-copy"><p className="handbook-kicker">518AILAB 入门总览</p><strong>《518 AI Lab<br />使用说明书》</strong><p>把社群、课程、活动、成员与合作交流放在一页里，先看清全貌，再决定从哪里开始。</p><ul aria-label="说明书内容"><li>社群与学习路径</li><li>课程与活动目录</li><li>成员、合作与联系</li></ul></div><a className="handbook-action" href={sourceLinks.handbook} target="_blank" rel="noreferrer" aria-label="打开 518 AI Lab 使用说明书"><span>打开使用说明书</span><b aria-hidden="true">↗</b></a></div></section>
 
       <section className="courses" id="courses" aria-labelledby="courses-title"><div className="page-shell">
-        <div className="section-heading"><div><p className="section-label">COURSE ATLAS</p><h2 id="courses-title">从第一期开始，<br />把课程一页页翻开。</h2></div><p>第一期 FDE 聚焦 AI 工程实践，第二期 AIGC 聚焦从生成到交付。更多课程将随着学习与实践持续完善。</p></div>
+        <div className="section-heading"><div><p className="section-label">AI BOOTCAMP</p><h2 id="courses-title">体系化 AI 训练营，<br />从第一期开启。</h2></div><p>FDE 是训练营第一期，聚焦 AI 工程实践；AIGC 是训练营第二期，聚焦从生成到交付。</p></div>
         <div className="featured-courses">
           <article className="course-feature fde-feature"><div className="course-image"><img src={image('course-fde.jpg')} alt="FDE 前沿部署工程师第一期课程封面" width="420" height="420" /><span>第一期 · 01</span></div><div className="course-copy"><p className="course-type">FDE · AI 工程实践</p><h3>从真实问题，到持续交付。</h3><p>从看流程、数据与关键人开始，练习把模糊需求变成可解问题，再走向工具协作、结果验证与经验复用。</p><a href={sourceLinks.fde} target="_blank" rel="noreferrer">查看 FDE 第一期学习一文通 <span aria-hidden="true">↗</span></a></div></article>
           <article className="course-feature aigc-feature"><div className="course-image"><img src={image('course-aigc.jpg')} alt="AIGC 第二期课程封面" width="420" height="420" /><span>第二期 · 02</span></div><div className="course-copy"><p className="course-type">AIGC · 创作与交付</p><h3>从会生成，到能完成一部作品。</h3><p>围绕短剧、漫剧创作的完整练习：从故事方向、剧本与分镜，到画面、声音、剪辑与发布反馈，让零散片段慢慢成为完整表达。</p><a href={sourceLinks.aigc} target="_blank" rel="noreferrer">查看 AIGC 第二期学习一文通 <span aria-hidden="true">↗</span></a></div></article>
         </div>
-        <div className="course-library" aria-label="更多课程目录"><div className="course-library-heading"><p className="section-label">COURSE ARCHIVE</p><h3>更多课程，敬请期待。</h3></div><div className="course-album">{courseLibrary.map((item, index) => <article key={item.title}><img src={image(item.image)} alt={`${item.title}课程封面`} width="420" height="420" loading="lazy" /><div><span>{String(index + 3).padStart(2, '0')}</span><strong>{item.title}</strong><small>课程主题</small></div></article>)}<article className="future-course"><div><span>＋</span><strong>更多课程</strong><small>敬请期待</small></div></article></div></div>
+        <div className="course-library" aria-label="专项 AI 课程目录"><div className="course-library-heading"><p className="section-label">SPECIALTY AI COURSES</p><h3>专项 AI 课程</h3></div><div className="course-album">{specialtyCourses.map((item) => <article key={item.title}><img src={image(item.image)} alt={`${item.title}课程封面`} width="420" height="420" loading="lazy" /><div><span>专项课程</span><strong>{item.title}</strong><small>课程主题</small></div></article>)}<article className="future-course"><div><span>＋</span><strong>更多专项课程</strong><small>敬请期待</small></div></article></div></div>
       </div></section>
 
       <section className="learning-way page-shell" aria-labelledby="learning-title"><div className="learning-heading"><p className="section-label">THE WAY WE LEARN</p><h2 id="learning-title">把学习留在<br />正在发生的事里。</h2></div><ol><li><span>01</span><h3>看见问题</h3><p>从工作、创作和协作里的真实卡点开始。</p></li><li><span>02</span><h3>动手练习</h3><p>用项目、笔记与输出，把理解变得具体。</p></li><li><span>03</span><h3>复盘沉淀</h3><p>回看结果与过程，让经验可以被再次使用。</p></li><li><span>04</span><h3>遇见同行</h3><p>在分享、讨论与共创中，交换视角与连接。</p></li></ol></section>
