@@ -43,7 +43,7 @@ const members = [
 ];
 
 const faqItems = [
-  { question: '518AILab 是什么？', answer: '518AILab 是以杭州 AI 生态为起点的学习与连接网络。通过体系化课程、活动交流和实践连接，让 AI 能力进入真实的工作与创作。' },
+  { question: '518AILab 是什么？', answer: '518AILab 是面向真实工作与创作的学习与连接网络。通过体系化课程、活动交流和实践连接，让 AI 能力进入真实的工作与创作。' },
   { question: '课程只有 FDE 吗？', answer: '不是。FDE 为第一期，AIGC 为第二期；后续课程将持续完善，具体主题与安排以正式课程资料为准。' },
   { question: 'AIGC 课程关注什么？', answer: '当前公开资料中的 AIGC 专题面向短剧与漫剧创作练习，覆盖故事方向、剧本与分镜、画面和声音制作，以及发布后的反馈迭代。' },
   { question: '如何联系 518AILab？', answer: '可扫描页面末尾的微信二维码，添加微信 vxbusi1688，或拨打电话 18530941024。' },
@@ -51,8 +51,8 @@ const faqItems = [
 
 const organizationSchema = {
   '@context': 'https://schema.org', '@type': 'Organization', name: '518AILab', alternateName: '518 AI Lab',
-  description: '以杭州 AI 生态为起点的学习与连接网络，提供体系化 AI 课程、活动交流与实践连接。',
-  url: SITE_URL, logo: `${SITE_URL}images/518ailab-logo.png`, areaServed: '杭州',
+  description: '面向真实工作与创作的学习与连接网络，提供体系化 AI 课程、活动交流与实践连接。',
+  url: SITE_URL, logo: `${SITE_URL}images/518ailab-logo.png`,
   knowsAbout: ['人工智能', 'FDE', 'AIGC', 'Claude Code', 'Codex', '企业 AI 应用', 'AI 实践'],
 };
 const websiteSchema = { '@context': 'https://schema.org', '@type': 'WebSite', name: '518AILab', url: SITE_URL, inLanguage: 'zh-CN', description: '518AILab 体系化 AI 课程、活动与可信同行网络。' };
@@ -77,14 +77,16 @@ export default function Home() {
 
       <section className="hero page-shell" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">518 AI LAB · HANGZHOU</p>
+          <p className="eyebrow">518 AI LAB</p>
           <h1 id="hero-title"><span className="hero-intro-title">518 AI Lab 介绍</span>打造可信<br /><em>AI 同行圈</em>。</h1>
           <p className="hero-lead">518AILab 是一个面向真实工作与创作的学习、交流和实践网络。我们把课程、活动与可信同行连接在一起，让学习不止停在工具体验。</p>
           <div className="hero-actions"><a className="button" href="#courses">探索课程地图 <span aria-hidden="true">↓</span></a><a className="quiet-link" href={sourceLinks.handbook} target="_blank" rel="noreferrer">阅读使用说明书 <span aria-hidden="true">↗</span></a></div>
         </div>
-        <div className="hero-art" aria-label="518AILab 可信 AI 同行圈主视觉">
-          <img src={image('hero-518-network.jpg')} alt="以纸感拼贴表现学习、实践与可信同行连接的 518AILab 主视觉" width="900" height="675" fetchPriority="high" />
-          <p>学习 · 实践 · 连接</p>
+        <div className="hero-art hero-growth-map" aria-label="518AILab 成员成长路线">
+          <div className="growth-map-heading"><p>MEMBER PATH</p><h2>成员成长路线</h2></div>
+          <ol className="growth-steps"><li><span>01</span><strong>加入 518</strong></li><li><span>02</span><strong>选择当期主题</strong></li><li><span>03</span><strong>体系化学习</strong></li><li><span>04</span><strong>真实问题实践</strong></li><li className="growth-connection"><span>05</span><strong>可信同行连接</strong></li></ol>
+          <div className="growth-summary"><strong>学习 · 实践 · 连接</strong><p>在每一次参与中积累经验，回看、复盘，再选择下一步。</p></div>
+          <p className="growth-note">具体参与与协作，以实际进展及双方确认的安排为准。</p>
         </div>
       </section>
 
