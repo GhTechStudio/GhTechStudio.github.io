@@ -106,8 +106,10 @@ h2 { margin: 0; font-size: clamp(37px, 4.6vw, 62px); font-weight: 600; letter-sp
 .community-copy > p:last-child { max-width: 430px; margin: 25px 0 0; color: var(--quiet); font-size: 16px; line-height: 1.9; }
 .member-album > p { margin: 0 0 12px; color: var(--moss); font-size: 10px; font-weight: 800; letter-spacing: .14em; }
 .member-album > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
-.member-album article { display: flex; min-height: 155px; flex-direction: column; padding: 20px; background: var(--paper); }
+.member-album article { display: flex; min-height: 0; flex-direction: column; overflow: hidden; background: var(--paper); }
 .member-album article:nth-child(2n) { background: #eee7d9; }
+.member-album img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.member-album article > div { display: flex; min-height: 132px; flex-direction: column; padding: 20px; }
 .member-album span { color: var(--terracotta); font-size: 10px; font-weight: 850; letter-spacing: .1em; }
 .member-album strong { margin-top: auto; font-family: "Songti SC", "STSong", serif; font-size: 27px; font-weight: 600; letter-spacing: -.04em; }
 .member-album small { margin-top: 7px; color: var(--quiet); font-size: 10px; letter-spacing: .08em; }

@@ -33,7 +33,14 @@ const activityList = [
   { title: '上虞区 OPC 联创社区开业承办', image: 'activity-shangyu.jpg' },
   { title: '白马湖 AIGC + ACGN 活动协办', image: 'activity-baimahu.jpg' },
 ];
-const members = ['任孝忠', '林志庆', '徐浩铭', '尹龙云', '沐沐', '李文洁'];
+const members = [
+  { name: '任孝忠', image: 'member-ren-xiaozhong.jpg' },
+  { name: '林志庆', image: 'member-lin-zhiqing.jpg' },
+  { name: '徐浩铭', image: 'member-xu-haoming.jpg' },
+  { name: '尹龙云', image: 'member-yin-longyun.jpg' },
+  { name: '沐沐', image: 'member-mumu.jpg' },
+  { name: '李文洁', image: 'member-li-wenjie.jpg' },
+];
 
 const faqItems = [
   { question: '518AILab 是什么？', answer: '518AILab 是以杭州 AI 生态为起点的学习与连接网络。通过体系化课程、活动交流和实践连接，让 AI 能力进入真实的工作与创作。' },
@@ -105,7 +112,7 @@ export default function Home() {
         <div className="activity-album" aria-label="活动画册"><div className="activity-album-heading"><div><p className="section-label">ACTIVITY CATALOGUE</p><h3>活动画册</h3></div><p>记录每一次分享、实作与相遇。</p><a className="inline-link" href={sourceLinks.handbook} target="_blank" rel="noreferrer">查看活动与社群资料 <span aria-hidden="true">↗</span></a></div><ol>{activityList.map((item, index) => <li key={item.title}><img src={image(item.image)} alt={`${item.title}活动图片`} width="420" height="420" loading="lazy" /><div><span>{String(index + 1).padStart(2, '0')}</span><strong>{item.title}</strong></div></li>)}</ol></div>
       </div></section>
 
-      <section className="community page-shell" aria-labelledby="community-title"><div className="community-copy"><p className="section-label">COMMUNITY</p><h2 id="community-title">有方向的人，<br />值得遇见彼此。</h2><p>成员来自不同背景，在学习、分享、交流与实践中慢慢建立可信连接。具体合作始终以双方确认的范围与安排为准。</p></div><div className="member-album" aria-label="成员风采"><p>MEMBER SPOTLIGHT</p><div>{members.map((member, index) => <article key={member}><span>{String(index + 1).padStart(2, '0')}</span><strong>{member}</strong><small>518AILab 成员</small></article>)}</div></div></section>
+      <section className="community page-shell" aria-labelledby="community-title"><div className="community-copy"><p className="section-label">COMMUNITY</p><h2 id="community-title">有方向的人，<br />值得遇见彼此。</h2><p>成员来自不同背景，在学习、分享、交流与实践中慢慢建立可信连接。具体合作始终以双方确认的范围与安排为准。</p></div><div className="member-album" aria-label="成员风采"><p>MEMBER SPOTLIGHT</p><div>{members.map((member, index) => <article key={member.name}><img src={image(member.image)} alt={`${member.name}，518AILab 成员`} width="420" height="420" loading="lazy" /><div><span>{String(index + 1).padStart(2, '0')}</span><strong>{member.name}</strong><small>518AILab 成员</small></div></article>)}</div></div></section>
 
       <section className="resources" aria-labelledby="resources-title"><div className="page-shell resources-layout"><div><p className="section-label">READ FURTHER</p><h2 id="resources-title">继续翻阅，<br />回到每一期课程。</h2></div><div className="resource-links"><a href={sourceLinks.handbook} target="_blank" rel="noreferrer"><span>01</span><div><strong>518 AI Lab 使用说明书</strong><small>社群介绍、课程列表、活动、成员与合作交流</small></div><b aria-hidden="true">↗</b></a><a href={sourceLinks.fde} target="_blank" rel="noreferrer"><span>02</span><div><strong>FDE 第一期学习一文通</strong><small>课程介绍、师资、课程大纲、日历与学习资料</small></div><b aria-hidden="true">↗</b></a><a href={sourceLinks.aigc} target="_blank" rel="noreferrer"><span>03</span><div><strong>AIGC 第二期学习一文通</strong><small>课程介绍、成长路径、日历、大纲与学习方法</small></div><b aria-hidden="true">↗</b></a></div></div></section>
 
