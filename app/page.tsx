@@ -9,8 +9,30 @@ const sourceLinks = {
   aigc: 'https://icnepuql73ya.feishu.cn/wiki/C4JTwhxZviveF3kDVa6cdOjLn9e?from=from_copylink',
 };
 
-const courseLibrary = ['Claude Code 源码解析课', 'Claude Code 精品课', 'Claude Code 直播课', 'Codex 企业场景应用', 'AI + OPC 一人公司线下课'];
-const activityList = ['AIGC 内容分享', '大咖对谈', 'OpenClaw 线下课', 'Agent 线下讨论会', '线下安装 OpenClaw', 'Codex 线下学习会', 'Claude Code 线下分享', '千问办公活动', 'AI 视频开源局', 'AI 魔法玩乐局'];
+const courseLibrary = [
+  { title: 'Claude Code 源码解析课', image: 'course-claude-source.jpg' },
+  { title: 'Claude Code 精品课', image: 'course-claude-premium.jpg' },
+  { title: 'Codex 企业场景应用', image: 'course-codex.jpg' },
+  { title: 'AI + OPC 一人公司线下课', image: 'course-opc.jpg' },
+  { title: 'Claude Code 直播课', image: 'course-claude-live.jpg' },
+  { title: 'AIGC 直播', image: 'course-aigc-live.jpg' },
+];
+const activityList = [
+  { title: 'OpenClaw 线下课', image: 'activity-openclaw-class.jpg' },
+  { title: 'OPC 一人公司商业课', image: 'activity-opc-business.jpg' },
+  { title: 'AIGC 内容分享', image: 'activity-aigc-sharing.jpg' },
+  { title: '大咖对谈', image: 'activity-expert-talk.jpg' },
+  { title: 'Agent 线下讨论会', image: 'activity-agent-discussion.jpg' },
+  { title: '线下安装 OpenClaw', image: 'activity-openclaw-install.jpg' },
+  { title: 'Codex 线下学习会', image: 'activity-codex-meetup.jpg' },
+  { title: 'Claude Code 线下分享', image: 'activity-claude-sharing.jpg' },
+  { title: 'FDE 专题线上课程', image: 'activity-fde-online.jpg' },
+  { title: '千问办公活动', image: 'activity-qianwen.jpg' },
+  { title: 'AI 视频开源局', image: 'activity-video-openlab.jpg' },
+  { title: 'AI 魔法玩乐局', image: 'activity-magic.jpg' },
+  { title: '上虞区 OPC 联创社区开业承办', image: 'activity-shangyu.jpg' },
+  { title: '白马湖 AIGC + ACGN 活动协办', image: 'activity-baimahu.jpg' },
+];
 const members = ['任孝忠', '林志庆', '徐浩铭', '尹龙云', '沐沐', '李文洁'];
 
 const faqItems = [
@@ -70,23 +92,22 @@ export default function Home() {
       <section className="courses" id="courses" aria-labelledby="courses-title"><div className="page-shell">
         <div className="section-heading"><div><p className="section-label">COURSE ATLAS</p><h2 id="courses-title">从第一期开始，<br />把课程一页页翻开。</h2></div><p>第一期 FDE 聚焦 AI 工程实践，第二期 AIGC 聚焦从生成到交付。更多课程将随着学习与实践持续完善。</p></div>
         <div className="featured-courses">
-          <article className="course-feature fde-feature"><div className="course-image"><img src={image('fde-course.jpg')} alt="FDE 前沿部署工程师第一期课程封面" width="500" height="888" /><span>第一期 · 01</span></div><div className="course-copy"><p className="course-type">FDE · AI 工程实践</p><h3>从真实问题，到持续交付。</h3><p>从看流程、数据与关键人开始，练习把模糊需求变成可解问题，再走向工具协作、结果验证与经验复用。</p><a href={sourceLinks.fde} target="_blank" rel="noreferrer">查看 FDE 第一期学习一文通 <span aria-hidden="true">↗</span></a></div></article>
-          <article className="course-feature aigc-feature"><div className="course-image"><img src={image('aigc-course.jpg')} alt="AIGC 第二期课程封面" width="720" height="540" /><span>第二期 · 02</span></div><div className="course-copy"><p className="course-type">AIGC · 创作与交付</p><h3>从会生成，到能完成一部作品。</h3><p>围绕短剧、漫剧创作的完整练习：从故事方向、剧本与分镜，到画面、声音、剪辑与发布反馈，让零散片段慢慢成为完整表达。</p><a href={sourceLinks.aigc} target="_blank" rel="noreferrer">查看 AIGC 第二期学习一文通 <span aria-hidden="true">↗</span></a></div></article>
+          <article className="course-feature fde-feature"><div className="course-image"><img src={image('course-fde.jpg')} alt="FDE 前沿部署工程师第一期课程封面" width="420" height="420" /><span>第一期 · 01</span></div><div className="course-copy"><p className="course-type">FDE · AI 工程实践</p><h3>从真实问题，到持续交付。</h3><p>从看流程、数据与关键人开始，练习把模糊需求变成可解问题，再走向工具协作、结果验证与经验复用。</p><a href={sourceLinks.fde} target="_blank" rel="noreferrer">查看 FDE 第一期学习一文通 <span aria-hidden="true">↗</span></a></div></article>
+          <article className="course-feature aigc-feature"><div className="course-image"><img src={image('course-aigc.jpg')} alt="AIGC 第二期课程封面" width="420" height="420" /><span>第二期 · 02</span></div><div className="course-copy"><p className="course-type">AIGC · 创作与交付</p><h3>从会生成，到能完成一部作品。</h3><p>围绕短剧、漫剧创作的完整练习：从故事方向、剧本与分镜，到画面、声音、剪辑与发布反馈，让零散片段慢慢成为完整表达。</p><a href={sourceLinks.aigc} target="_blank" rel="noreferrer">查看 AIGC 第二期学习一文通 <span aria-hidden="true">↗</span></a></div></article>
         </div>
-        <div className="course-library" aria-label="更多课程目录"><div><p className="section-label">COURSE ARCHIVE</p><h3>更多课程，<br />敬请期待。</h3></div><div className="course-album">{courseLibrary.map((item, index) => <article key={item}><span>0{index + 3}</span><strong>{item}</strong><small>课程主题</small></article>)}<article className="future-course"><span>＋</span><strong>更多课程</strong><small>敬请期待</small></article></div></div>
+        <div className="course-library" aria-label="更多课程目录"><div><p className="section-label">COURSE ARCHIVE</p><h3>更多课程，<br />敬请期待。</h3></div><div className="course-album">{courseLibrary.map((item, index) => <article key={item.title}><img src={image(item.image)} alt={`${item.title}课程封面`} width="420" height="420" loading="lazy" /><div><span>{String(index + 3).padStart(2, '0')}</span><strong>{item.title}</strong><small>课程主题</small></div></article>)}<article className="future-course"><div><span>＋</span><strong>更多课程</strong><small>敬请期待</small></div></article></div></div>
       </div></section>
 
       <section className="learning-way page-shell" aria-labelledby="learning-title"><div className="learning-heading"><p className="section-label">THE WAY WE LEARN</p><h2 id="learning-title">把学习留在<br />正在发生的事里。</h2></div><ol><li><span>01</span><h3>看见问题</h3><p>从工作、创作和协作里的真实卡点开始。</p></li><li><span>02</span><h3>动手练习</h3><p>用项目、笔记与输出，把理解变得具体。</p></li><li><span>03</span><h3>复盘沉淀</h3><p>回看结果与过程，让经验可以被再次使用。</p></li><li><span>04</span><h3>遇见同行</h3><p>在分享、讨论与共创中，交换视角与连接。</p></li></ol></section>
 
       <section className="activities" id="activities" aria-labelledby="activities-title"><div className="page-shell">
         <div className="section-heading"><div><p className="section-label">ACTIVITY ARCHIVE</p><h2 id="activities-title">把屏幕里的学习，<br />带到人与人的现场。</h2></div><p>活动是课程之外的另一种相遇。分享、学习会、专题交流与共创活动，让不同经验在更轻松、具体的场景中连接。</p></div>
-        <div className="activity-gallery"><figure className="gallery-wide"><img src={image('aigc-share.jpg')} alt="518AILab AIGC 内容分享活动海报" width="720" height="536" /><figcaption><span>活动选辑</span><strong>AIGC 内容分享</strong></figcaption></figure><figure className="gallery-tall"><img src={image('video-activity.jpg')} alt="518AILab AI 视频开源局活动海报" width="520" height="1040" /><figcaption><span>活动选辑</span><strong>AI 视频开源局</strong></figcaption></figure></div>
-        <div className="activity-album" aria-label="活动画册"><div><p className="section-label">ACTIVITY CATALOGUE</p><h3>活动画册</h3><p>记录每一次分享、实作与相遇。</p><a className="inline-link" href={sourceLinks.handbook} target="_blank" rel="noreferrer">查看活动与社群资料 <span aria-hidden="true">↗</span></a></div><ol>{activityList.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, '0')}</span><strong>{item}</strong></li>)}</ol></div>
+        <div className="activity-album" aria-label="活动画册"><div><p className="section-label">ACTIVITY CATALOGUE</p><h3>活动画册</h3><p>记录每一次分享、实作与相遇。</p><a className="inline-link" href={sourceLinks.handbook} target="_blank" rel="noreferrer">查看活动与社群资料 <span aria-hidden="true">↗</span></a></div><ol>{activityList.map((item, index) => <li key={item.title}><img src={image(item.image)} alt={`${item.title}活动图片`} width="420" height="420" loading="lazy" /><div><span>{String(index + 1).padStart(2, '0')}</span><strong>{item.title}</strong></div></li>)}</ol></div>
       </div></section>
 
       <section className="community page-shell" aria-labelledby="community-title"><div className="community-copy"><p className="section-label">COMMUNITY</p><h2 id="community-title">有方向的人，<br />值得遇见彼此。</h2><p>成员来自不同背景，在学习、分享、交流与实践中慢慢建立可信连接。具体合作始终以双方确认的范围与安排为准。</p></div><div className="member-album" aria-label="成员风采"><p>MEMBER SPOTLIGHT</p><div>{members.map((member, index) => <article key={member}><span>{String(index + 1).padStart(2, '0')}</span><strong>{member}</strong><small>518AILab 成员</small></article>)}</div></div></section>
 
-      <section className="resources" aria-labelledby="resources-title"><div className="page-shell resources-layout"><div><p className="section-label">READ FURTHER</p><h2 id="resources-title">继续翻阅，<br />回到每一期课程。</h2></div><div className="resource-links"><a href={sourceLinks.fde} target="_blank" rel="noreferrer"><span>01</span><div><strong>FDE 第一期学习一文通</strong><small>课程介绍、师资、课程大纲、日历与学习资料</small></div><b aria-hidden="true">↗</b></a><a href={sourceLinks.aigc} target="_blank" rel="noreferrer"><span>02</span><div><strong>AIGC 第二期学习一文通</strong><small>课程介绍、成长路径、日历、大纲与学习方法</small></div><b aria-hidden="true">↗</b></a></div></div></section>
+      <section className="resources" aria-labelledby="resources-title"><div className="page-shell resources-layout"><div><p className="section-label">READ FURTHER</p><h2 id="resources-title">继续翻阅，<br />回到每一期课程。</h2></div><div className="resource-links"><a href={sourceLinks.handbook} target="_blank" rel="noreferrer"><span>01</span><div><strong>518 AI Lab 使用说明书</strong><small>社群介绍、课程列表、活动、成员与合作交流</small></div><b aria-hidden="true">↗</b></a><a href={sourceLinks.fde} target="_blank" rel="noreferrer"><span>02</span><div><strong>FDE 第一期学习一文通</strong><small>课程介绍、师资、课程大纲、日历与学习资料</small></div><b aria-hidden="true">↗</b></a><a href={sourceLinks.aigc} target="_blank" rel="noreferrer"><span>03</span><div><strong>AIGC 第二期学习一文通</strong><small>课程介绍、成长路径、日历、大纲与学习方法</small></div><b aria-hidden="true">↗</b></a></div></div></section>
 
       <section className="faq page-shell" aria-labelledby="faq-title"><div><p className="section-label">QUICK ANSWERS</p><h2 id="faq-title">关于 518AILab</h2></div><div className="faq-list">{faqItems.map((item, index) => <article key={item.question}><span>0{index + 1}</span><div><h3>{item.question}</h3><p>{item.answer}</p></div></article>)}</div></section>
 
