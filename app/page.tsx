@@ -93,7 +93,6 @@ export default function Home() {
 
       <section className="hero page-shell" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">518 AI LAB</p>
           <h1 id="hero-title"><span className="hero-intro-title">518 AI Lab 介绍</span>打造可信<br /><em>AI 同行圈</em>。</h1>
           <p className="hero-lead">518AILab 是一个面向真实工作与创作的学习、交流和实践网络。我们把课程、活动与可信同行连接在一起，让学习不止停在工具体验。</p>
           <div className="hero-actions"><a className="button" href="#courses">探索课程地图 <span aria-hidden="true">↓</span></a><a className="quiet-link" href={sourceLinks.handbook} target="_blank" rel="noreferrer">阅读使用说明书 <span aria-hidden="true">↗</span></a></div>
